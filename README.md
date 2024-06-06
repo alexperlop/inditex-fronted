@@ -1,9 +1,12 @@
-
 # inditex-fronted
 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+# Webpack configuration
+
+This project was ejected from Create React App to allow for custom Webpack configuration. The configuration is located in the `config/webpack.config.js` file.
 
 ## Available Scripts
 
@@ -71,4 +74,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> feature/basic-config

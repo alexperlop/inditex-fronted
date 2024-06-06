@@ -9,10 +9,29 @@ const __dirname = dirname(__filename);
 
 const isDevelopment = process.env.REACT_APP_ENV !== 'production';
 
+/**
+ * Webpack configuration object.
+ *
+ * @type {Object}
+ * @property {string} entry - The entry point of the application.
+ * @property {Object} output - The output configuration for the bundled files.
+ * @property {string} output.filename - The filename pattern for the bundled files.
+ * @property {string} output.path - The output directory for the bundled files.
+ * @property {string} output.publicPath - The public URL path for the bundled files.
+ * @property {string} mode - The mode of the webpack build (development or production).
+ * @property {string} devtool - The devtool configuration for source mapping.
+ * @property {Object} module - The module configuration for handling different file types.
+ * @property {Array} module.rules - The rules for different file types.
+ * @property {Object} plugins - The plugins used in the webpack build.
+ * @property {Object} optimization - The optimization configuration for the build.
+ * @property {Object} devServer - The configuration for the webpack development server.
+ * @property {Object} resolve - The configuration for resolving module requests.
+ */
+
 const config = {
   entry: './src/index.js',
   output: {
-    filename: isDevelopment ? '[name].bundle.js' : '[name].[contenthash].bundle.js',
+    filename: isDevelopment ? 'bundle.js' : 'bundle.min.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
   },
@@ -34,7 +53,7 @@ const config = {
           {
             loader: 'css-loader',
             options: {
-              modules: true, // Habilitar CSS Modules
+              modules: true,
             },
           },
         ],
