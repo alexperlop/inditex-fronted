@@ -4,6 +4,7 @@ import { useFecthPodcastList } from '../services/useFecthPodcastList.js'
 import { ITEMS_PER_PAGE } from '../utils/constants.js'
 import FilterInput from '../components/ui/FilterInput.js'
 import Loading from '../components/ui/Loading.js'
+import Error from '../components/ui/Error.js'
 
 const Home = () => {
   const { podcastList, error, isLoading } = useFecthPodcastList()
@@ -57,6 +58,8 @@ const Home = () => {
   }
 
   if (isLoading && !error) return <Loading />
+
+  if (error) return <Error error={error} />
 
   return (
     <main>

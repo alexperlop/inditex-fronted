@@ -3,11 +3,19 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   color: black;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  max-height: 40px;
+}
+
+.podcast_header>nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .podcast_nav-list {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   list-style: none;
   padding: 0;
 }
@@ -18,4 +26,5 @@
   width: 15px;
   padding: 15px;
   border-radius: 50%;
+
 }

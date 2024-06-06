@@ -4,7 +4,7 @@ import '../styles/EpisodeDetail.css'
 
 const EpisodeDetail = ({ podcastDetail, episode }) => {
   return (
-    <section className='section_episode'>
+    <section className='section_episode' data-testid='section_episode'>
       <EpisodeCard podcastDetail={podcastDetail} />
       <div className='episode-card'>
         <h3>{episode.trackName}</h3>

@@ -25,15 +25,15 @@ const Header = () => {
     <header className="podcast_header">
       <nav>
         <ul className="podcast_nav-list">
-          {HEADER_ITEMS.map(item => (
+          {HEADER_ITEMS?.map(item => (
             <li key={item?.id}>
               <Link to={item?.path}>
                 {item?.title}
               </Link>
             </li>
           ))}
-          {showLoadingIndicator && <IconLoading />}
         </ul>
+        {showLoadingIndicator && <IconLoading />}
       </nav>
     </header>
   )

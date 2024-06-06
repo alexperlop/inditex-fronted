@@ -31,7 +31,7 @@ const isDevelopment = process.env.REACT_APP_ENV !== 'production';
 const config = {
   entry: './src/index.js',
   output: {
-    filename: isDevelopment ? 'bundle.js' : 'bundle.min.js',
+    filename: isDevelopment ? '[name].bundle.js' : '[name].[contenthash].bundle.min.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
   },

@@ -1,0 +1,16 @@
+.goBack-container {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.goBack-container>button {
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
