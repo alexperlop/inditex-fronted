@@ -41,7 +41,7 @@ export const useFecthPodcastList = () => {
 
   useEffect(() => {
     fecthPodcastList()
-  }, [])
+  }, [fecthPodcastList])
 
 
   return {

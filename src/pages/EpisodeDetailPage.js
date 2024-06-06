@@ -25,7 +25,7 @@ const EpisodeDetailPage = () => {
     return () => {
       setEpisode(null)
     }
-  }, [])
+  }, [episodeId])
 
 
   if (!episode) return <Loading />

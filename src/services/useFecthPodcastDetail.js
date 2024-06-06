@@ -38,11 +38,11 @@ export const useFecthPodcastDetail = ({ podcastId }) => {
     } finally {
       setIsLoading(false)
     }
-  }, [])
+  }, [podcastId])
 
   useEffect(() => {
     fecthPodcastDetail()
-  }, [podcastId])
+  }, [fecthPodcastDetail, podcastId])
 
   return {
     podcastDetail,
