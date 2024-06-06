@@ -1,0 +1,21 @@
+.podcast_header {
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.podcast_nav-list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+}
+
+.podcast_icon-loading {
+  background-color: cornflowerblue;
+  height: 15px;
+  width: 15px;
+  padding: 15px;
+  border-radius: 50%;
+}

@@ -1,24 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-// import axios from 'axios';
+import React from 'react'
+import EpisodeCard from './EpisodeCard.js';
+import '../styles/EpisodeDetail.css'
 
-const EpisodeDetail = () => {
-  const { id } = useParams();
-  const [episode, setEpisode] = useState(null);
-
-  // useEffect(() => {
-  //   axios.get(`/api/episodes/${id}`)
-  //     .then(response => setEpisode(response.data))
-  //     .catch(error => console.error(error));
-  // }, [id]);
-
-  if (!episode) return <div>Loading...</div>;
-
+const EpisodeDetail = ({ podcastDetail, episode }) => {
   return (
-    <div>
-      <h2>{episode.title}</h2>
-      <p>{episode.description}</p>
-    </div>
+    <section className='section_episode'>
+      <EpisodeCard podcastDetail={podcastDetail} />
+      <div className='episode-card'>
+        <h3>{episode.trackName}</h3>
+        <p dangerouslySetInnerHTML={{ __html: episode.description }} />
+        <audio controls>
+          <source src={episode.episodeUrl} type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </section>
   );
 };
 

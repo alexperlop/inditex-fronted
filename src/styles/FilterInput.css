@@ -1,0 +1,19 @@
+.podcast_form-filter {
+  display: flex;
+  justify-content: end;
+  margin: 20px 30px;
+}
+
+.podcast_input-filter {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.podcast_filter-popover {
+  background-color: cornflowerblue;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  margin: 0 10px;
+}

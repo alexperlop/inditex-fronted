@@ -1,29 +1,28 @@
-// src/components/PodcastList.js
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-// import axios from 'axios';
+import React from 'react'
+import PodcastItem from './PodcastItem.js'
+import '../styles/PodcastList.css'
 
-const PodcastList = () => {
-  const [podcasts, setPodcasts] = useState([]);
 
-  // useEffect(() => {
-  //   axios.get('/api/podcasts')
-  //     .then(response => setPodcasts(response.data))
-  //     .catch(error => console.error(error));
-  // }, []);
-
+const PodcastList = ({ podcastList, visiblePodcasts }) => {
   return (
-    <div>
-      <h2>Podcast List</h2>
-      <ul>
-        {podcasts.map(podcast => (
-          <li key={podcast.id}>
-            <Link to={`/podcast/${podcast.id}`}>{podcast.title}</Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+    <section>
+      {podcastList?.length > 0 &&
+        <>
+          <ul className='podcast_list'>
+            {visiblePodcasts?.map(podcast => {
+              return (
+                <PodcastItem
+                  key={podcast?.id?.attributes?.['im:id']}
+                  id={podcast?.id?.attributes?.['im:id']}
+                  title={podcast?.title?.label}
+                  img={podcast?.['im:image'][0]?.label}
+                  author={podcast?.['im:artist']?.label}
+                />)
+            })}
+          </ul>
+        </>}
+    </section>
+  )
+}
 
-export default PodcastList;
+export default PodcastList

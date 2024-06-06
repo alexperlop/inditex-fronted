@@ -1,33 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
-// import axios from 'axios';
+import React from 'react'
+import '../styles/PodcastDetail.css'
+import Table from './ui/Table.js'
+import EpisodeCard from './EpisodeCard.js'
 
-const PodcastDetail = () => {
-  const { id } = useParams();
-  const [podcast, setPodcast] = useState(null);
-
-  // useEffect(() => {
-  //   axios.get(`/api/podcasts/${id}`)
-  //     .then(response => setPodcast(response.data))
-  //     .catch(error => console.error(error));
-  // }, [id]);
-
-  if (!podcast) return <div>Loading...</div>;
+const PodcastDetail = ({ podcastDetail }) => {
 
   return (
-    <div>
-      <h2>{podcast.title}</h2>
-      <p>{podcast.description}</p>
-      <h3>Episodes</h3>
-      <ul>
-        {podcast.episodes.map(episode => (
-          <li key={episode.id}>
-            <Link to={`/episode/${episode.id}`}>{episode.title}</Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+    <section className='podcast_detail-section'>
+      <EpisodeCard podcastDetail={podcastDetail} />
+      <div className='podcast_detail-episodes'>
+        <h3>Episodes:{podcastDetail.length}</h3>
+        <Table columns={['Title', 'Date', 'Duration']} data={podcastDetail.slice(1)} />
+      </div>
+    </section>
+  )
+}
 
-export default PodcastDetail;
+export default PodcastDetail
